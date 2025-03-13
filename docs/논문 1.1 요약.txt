@@ -1,0 +1,16 @@
+우주 기반 시스템의 전반적인 의존성이 증가함 
+-> 이로 인해 전자전 및 사이버 공격 위협이 증가해 다양한 사이버 위협에 대한 취약성이 부각됨
+-> 안전한 통신의 필요성이 중요하게 대두됨
+ex) 2022년 러시아-우크라이나의 사례, 분쟁 초기 Viasat이라는 미국 통신 회사의 위성 통신망이 사이버 공격을 받아 유럽 일부 지역의 군 및 민간 통신망이 차단되는 사건이 발생
+   -> 최신에 일어난 사건 중 우주 기반 시스템이 가진 사이버 보안의 중요성을 가장 강하게 환기한 사례
+
+위성 통신은 본질적으로 광범위한 범위에서 데이터를 전송하고 수신하는 특성이 있음
+-> 이런 특성은 도청, 신호 재밍(Jamming), 재전송공격(Relay attack) 등 다양한 사이버 공격에 취약
+Pietro Tedeschi의 위성 통신 보안 연구에 따르면, 위성 통신 시스템에 적용되는 암호화 기술이 이러한 보안 위협을 완화하는 데 중요하다 강조
+- 출처: TEDESCHI, Pietro; SCIANCALEPORE, Savio; DI PIETRO, Roberto. 
+Satellite-based communications security: A survey of threats, solutions, and 
+research challenges. Computer Networks, 2022, 216: 109246.
+
+최근 들어 위성이 다양한 임무를 수행하면서 단일 키 체계로는 보안 요구사항을 충족하기 어려움
+ex) 미국 국방부의 MUOS(The Mobile User Objective System) 프로그램에서는 사용자 단말기와의 통신을 위해 매일 250개의 암호화 키를 배포하여 통신환경을 유지하려는 프로그램을 진행했음
+=> 이러한 이유로 OTAR(Over-the-Air Rekeying)과 같은 동적 키 관리 기술이 요구됨, 안전한 키 교환을 위해 지상국에 신뢰실행환경(Trusted Execution Environment, TEE)을 적용해 암호화 과정을 신뢰실행환경에서 수행으로써 외부 위협으로부터 안전한 위성 키 교환 환경을 구현하고자 함
