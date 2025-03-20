@@ -1,15 +1,20 @@
-# satellite_OPTEE
-## 주제
-- 기밀연산 인공위성 시스템 적용
-
-## 주요내용
+# 기밀연산 인공위성 시스템 적용
 - 인공위성 시스템에 OP-TEE 기반 기밀연산 프로토콜을 적용시켜 데이터를 보다 안전하게 관리한다.
-
-## 목표
 - 인공위성 시스템에 OP-TEE 환경 구축
 - OP-TEE 환경 내 AES-CSC 프로토콜 구현
+- 멤버 소개
+  + 202002558 조민성
+  + 201902711 신희성
+  + 201802076 김주호
 
-## 조원
-+ 202002558 조민성
-+ 201902711 신희성
-+ 201802076 김주호
+## 2주차 활동
+- 문제점 목록 만들기
+- 발표 url : [2주차 발표](https://www.youtube.com/watch?v=4JhA1YWM01Y)
+- 제출물 : [문제점 목록](https://github.com/isord/satellite_OPTEE/blob/week2/docs/11%EC%A1%B0-2%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%AC%B8%EC%A0%9C%EC%A0%90%20%EB%AA%A9%EB%A1%9D.pdf) [발표 자료](https://github.com/isord/satellite_OPTEE/blob/week2/docs/ppt/11%EC%A1%B0-2%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
+-  PR 링크 : https://github.com/isord/satellite_OPTEE/pull/6
+
+## 1주차 활동
+- 디자인 개요서 만들기
+- 발표 url : [1주차 발표](https://youtu.be/3Tp8I-uHU-8)
+- 제출물 : [디자인개요서](https://github.com/isord/satellite_OPTEE/blob/week2/docs/11%EC%A1%B0-1%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%94%94%EC%9E%90%EC%9D%B8%EA%B0%9C%EC%9A%94%EC%84%9C.pdf) [발표자료](https://github.com/isord/satellite_OPTEE/blob/week2/docs/ppt/11%EC%A1%B0-1%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
+- PR 링크 : https://github.com/isord/satellite_OPTEE/pull/3#issue-2921678320
