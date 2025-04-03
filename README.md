@@ -9,7 +9,7 @@
 
 ## 4주차 활동
 - 문제정의서 만들기
-- 발표 url : [4주차 발표]()
+- 발표 url : [4주차 발표](https://youtu.be/dpTzdcrGmOc?si=dvOeL8yqa8pfDcGK)
 - 제출물 : [문제정의서](),[발표자료]()
 - PR 링크 : [4주차 PR]()
   
