@@ -7,6 +7,12 @@
   + 201902711 신희성
   + 201802076 김주호
 
+## 4주차 활동
+- 문제정의서 만들기
+- 발표 url : [4주차 발표](https://youtu.be/dpTzdcrGmOc?si=dvOeL8yqa8pfDcGK)
+- 제출물 : [문제정의서](https://github.com/isord/satellite_OPTEE/blob/week4/docs/11%EC%A1%B0-4%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%AC%B8%EC%A0%9C%EC%A0%95%EC%9D%98%EC%84%9C.pdf),[발표자료](https://github.com/isord/satellite_OPTEE/blob/week4/docs/ppt/11%EC%A1%B0-4%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
+- PR 링크 : [4주차 PR]()
+  
 ## 3주차 활동
 - 브레인스토밍 결과 만들기
 - 발표 url : [3주차 발표](https://www.youtube.com/watch?v=2vLsEb2MQSM&t=2s)
@@ -14,7 +20,6 @@
 ,[발표 자료](https://github.com/isord/satellite_OPTEE/blob/week3/docs/ppt/11%EC%A1%B0-3%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
 - PR 링크 :[3주차 PR](https://github.com/isord/satellite_OPTEE/pull/7)
 
-  
 ## 2주차 활동
 - 문제점 목록 만들기
 - 발표 url : [2주차 발표](https://www.youtube.com/watch?v=4JhA1YWM01Y)
