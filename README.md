@@ -21,7 +21,7 @@
 ## 5~6주차 활동
 - 유스케이스 작성하기
 - 발표 url : [5~6주차 발표](https://youtu.be/f0kYec6o4E8?si=UH05Mx2l2RuBJluz)
-- 제출물 : [유스케이스](https://github.com/isord/satellite_OPTEE/blob/week5/docs/11%EC%A1%B0-5%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%85%EC%84%B8%EC%84%9C.pdf),[발표자료](https://github.com/isord/satellite_OPTEE/blob/week5/docs/ppt/11조-6주차-기밀연산%20인공위성%20시스템%20적용-발표자료.pdf)
+- 제출물 : [유스케이스](https://github.com/isord/satellite_OPTEE/blob/week5/docs/11%EC%A1%B0-5%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4%EB%AA%85%EC%84%B8%EC%84%9C.pdf),[발표자료](https://github.com/isord/satellite_OPTEE/blob/4c6160889935cc035386ee77162b0102546ebc16/docs/ppt/11%E1%84%8C%E1%85%A9-6%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1-%E1%84%80%E1%85%B5%E1%84%86%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B1%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%20%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC-%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD.pdf)
 - PR 링크 : [5~6주차 PR]()
   
 ## 4주차 활동
