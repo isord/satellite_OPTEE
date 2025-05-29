@@ -12,12 +12,10 @@
 static uint8_t g_public_key[KYBER_PUBLICKEYBYTES];
 static uint8_t g_secret_key[KYBER_SECRETKEYBYTES];
 
-/* 더미 Kyber 키 생성 함수 */
 static TEE_Result generate_kyber_keys(void) {
     uint32_t time_seed;
     TEE_GetSystemTime(&time_seed);
-    
-    /* 시간 기반 더미 키 생성 */
+
     for (int i = 0; i < KYBER_PUBLICKEYBYTES; i++) {
         g_public_key[i] = (uint8_t)((time_seed + i) % 256);
     }
@@ -36,12 +34,10 @@ static TEE_Result generate_kyber_keys(void) {
     return TEE_SUCCESS;
 }
 
-/* 더미 Kyber 암호화 함수 */
 static TEE_Result kyber_encapsulate(uint8_t *ciphertext, uint8_t *shared_secret) {
     uint32_t time_seed;
     TEE_GetSystemTime(&time_seed);
-    
-    /* 더미 암호문과 공유비밀 생성 */
+
     for (int i = 0; i < KYBER_CIPHERTEXTBYTES; i++) {
         ciphertext[i] = (uint8_t)((time_seed + i + 200) % 256);
     }
@@ -80,8 +76,7 @@ TEE_Result TA_OpenSessionEntryPoint(uint32_t param_types,
     
     EMSG("🔐 KYBER SESSION OPENED!");
     EMSG("🔄 Initializing Post-Quantum Cryptography...");
-    
-    /* 자동으로 키 생성 */
+
     generate_kyber_keys();
     
     EMSG("✅ Kyber TA ready for PQC operations!");
