@@ -1,0 +1,92 @@
+#
+# Arm SCP/MCP Software
+# Copyright (c) 2024, Arm Limited and Contributors. All rights reserved.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+stages:
+  - linting
+  - static-analysis
+  - unit-testing
+  - build
+  - scmi-test
+  - platform-test
+  - coverage-report
+
+include:
+  - local: .gitlab/templates/linting.yml
+  - local: .gitlab/templates/static-analysis.yml
+  - local: .gitlab/templates/unit-test.yml
+  - local: .gitlab/templates/build-test.yml
+  - local: .gitlab/templates/scmi-test.yml
+  - local: .gitlab/templates/coverity-test.yml
+  - local: .gitlab/templates/platform-test.yml
+  - local: .gitlab/templates/merge-report.yml
+
+check-lint:
+  extends: .check-lint
+  stage: linting
+  allow_failure: true
+
+banned-api:
+  extends: .banned-api
+  stage: static-analysis
+  allow_failure: true
+
+coverity-test:
+  stage: static-analysis
+  extends: .coverity-test
+  allow_failure: true
+
+check-ut:
+  extends: .check-ut
+  stage: unit-testing
+  allow_failure: true
+
+build-products-all-products-all-log-levels:
+  extends: .build-products-all-products-all-log-levels
+  stage: build
+  allow_failure: true
+
+build-optee:
+  extends: .build-optee
+  stage: build
+  allow_failure: true
+
+scmi-test:
+  extends: .scmi-test
+  stage: scmi-test
+
+fvp-boot-test:
+  extends: .fvp-boot-test
+  stage: platform-test
+
+board-test-build:
+  extends: .board-test-build
+  stage: platform-test
+
+board-test-run:
+  extends: .board-test-run
+  stage: platform-test
+  needs:
+    - board-test-build
+
+merge-ut-coverage:
+  extends: .merge-report
+  stage: coverage-report
+  allow_failure: true
+  dependencies:
+    - check-ut
+
+merge-all-coverage:
+  extends: .merge-report
+  stage: coverage-report
+  allow_failure: true
+  # Example of 'coverage' regex matches in coverage report
+  # "lines......: XX.X% (XXXX of XXXX lines)"
+  coverage: '/lines[\.]+\: (\d+\.\d+)\%/'
+  dependencies:
+    - check-ut
+    - scmi-test
+    - fvp-boot-test

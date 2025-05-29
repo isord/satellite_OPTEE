@@ -1,0 +1,29 @@
+#
+# Arm SCP/MCP Software
+# Copyright (c) 2024, Arm Limited and Contributors. All rights reserved.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+.check-ut:
+  image: ${CI_REGISTRY_IMAGE}/ci-base:latest
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    GIT_DEPTH: 1
+  parallel:
+    matrix:
+      - SCP_UT_SUITE:
+        - fwk
+        - mod
+        - prod
+  before_script:
+    - mkdir -p artifacts/coverage_reports
+  script:
+    - echo "Unit test under test $SCP_UT_SUITE"
+    - python3 tools/check_utest.py --suite $SCP_UT_SUITE --coverage
+    - cp build/*/test/scp_v2_*_test_coverage_filtered.info artifacts/coverage_reports
+  artifacts:
+    when: on_success
+    expire_in: 2 days
+    paths:
+      - artifacts/coverage_reports

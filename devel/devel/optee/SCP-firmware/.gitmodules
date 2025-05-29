@@ -1,0 +1,6 @@
+[submodule "cmsis"]
+	path = contrib/cmsis/git
+	url = https://github.com/ARM-software/CMSIS_5
+[submodule "contrib/cmock/git"]
+	path = contrib/cmock/git
+	url = https://github.com/ThrowTheSwitch/CMock

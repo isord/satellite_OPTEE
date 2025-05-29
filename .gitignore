@@ -1,0 +1,7 @@
+/devel/**/.repo/
+/devel/**/.git/
+/devel/**/out*/
+/devel/**/build*/
+/devel/**/toolchains*/
+/devel/**/__pycache__/
+/devel/**/*.o
