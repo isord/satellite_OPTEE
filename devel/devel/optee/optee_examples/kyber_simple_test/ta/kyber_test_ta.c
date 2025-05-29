@@ -15,9 +15,7 @@
 static uint8_t g_public_key[KYBER_PUBLICKEYBYTES];
 static uint8_t g_secret_key[KYBER_SECRETKEYBYTES];
 
-/* 더미 kyber 함수들 구현 - 함수 호출보다 먼저 정의 */
 static TEE_Result kyber_simple_keygen(uint8_t *pk, uint8_t *sk) {
-    /* 더미 키 생성 - 실제로는 난수로 채워야 함 */
     TEE_MemFill(pk, 0xAA, KYBER_PUBLICKEYBYTES);
     TEE_MemFill(sk, 0xBB, KYBER_SECRETKEYBYTES);
     DMSG("Dummy Kyber keypair generated");
@@ -25,8 +23,7 @@ static TEE_Result kyber_simple_keygen(uint8_t *pk, uint8_t *sk) {
 }
 
 static TEE_Result kyber_simple_encaps(uint8_t *ct, uint8_t *ss, const uint8_t *pk) {
-    (void)pk; /* 공개키 사용하지 않음 (더미) */
-    /* 더미 암호문과 공유비밀 생성 */
+    (void)pk;
     TEE_MemFill(ct, 0xCC, KYBER_CIPHERTEXTBYTES);
     TEE_MemFill(ss, 0xDD, KYBER_SSBYTES);
     DMSG("Dummy Kyber encapsulation performed");
@@ -34,9 +31,8 @@ static TEE_Result kyber_simple_encaps(uint8_t *ct, uint8_t *ss, const uint8_t *p
 }
 
 static TEE_Result kyber_simple_decaps(uint8_t *ss, const uint8_t *ct, const uint8_t *sk) {
-    (void)ct; /* 암호문 사용하지 않음 (더미) */
-    (void)sk; /* 비밀키 사용하지 않음 (더미) */
-    /* 더미 공유비밀 생성 */
+    (void)ct;
+    (void)sk;
     TEE_MemFill(ss, 0xDD, KYBER_SSBYTES);
     DMSG("Dummy Kyber decapsulation performed");
     return TEE_SUCCESS;
