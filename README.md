@@ -22,7 +22,7 @@
 - 테스트 결과 문서 작성하기
 - 발표 url: [13주차 발표](https://youtu.be/xq_OmGGWnt8)
 - 제출물 : [테스트 결과 문서](https://github.com/isord/satellite_OPTEE/blob/week13/docs/11%EC%A1%B0-13%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%20%EB%AC%B8%EC%84%9C.pdf), [발표자료](https://github.com/isord/satellite_OPTEE/blob/week13/docs/ppt/11%EC%A1%B0-13%EC%A3%BC%EC%B0%A8-%EA%B8%B0%EB%B0%80%EC%97%B0%EC%82%B0%20%EC%9D%B8%EA%B3%B5%EC%9C%84%EC%84%B1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%A0%81%EC%9A%A9-%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
-- PR 링크 : [13주차 PR]()
+- PR 링크 : [13주차 PR](https://github.com/isord/satellite_OPTEE/pull/14)
   
 ## 11주차 활동
 - 테스트케이스 설계서 작성하기
