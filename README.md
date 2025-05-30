@@ -17,7 +17,13 @@
 
    PQC(Post-Quantum Cryptography) 알고리즘은 양자컴퓨터 시대에도 안전한 암호 기술이며,
    기존 RSA나 ECC가 양자컴퓨터에 취약한 점을 보완하기 위해 개발되었다.
-
+  
+## 13주차 활동
+- 테스트 결과 문서 작성하기
+- 발표 url: [13주차 발표](https://youtu.be/xq_OmGGWnt8)
+- 제출물 : [테스트 결과 문서](), [발표자료]()
+- PR 링크 : [13주차 PR]()
+  
 ## 11주차 활동
 - 테스트케이스 설계서 작성하기
 - 발표 url: [11주차 발표](https://www.youtube.com/watch?v=vlYHO6xd0wY)
