@@ -44,27 +44,13 @@ static TEE_Result kyber_simple_decaps(uint8_t *ss, const uint8_t *ct, const uint
 }
 
 static TEE_Result kyber_simple_keygen_with_timing(uint8_t *pk, uint8_t *sk) {
-    uint32_t start_time, end_time, elapsed_ms;
+ DMSG("NEW TIMING FUNCTION CALLED!");
     
-    DMSG(" NEW TIMING FUNCTION CALLED!");
-
-    TEE_GetSystemTime(&start_time);
-
-    uint32_t time_seed;
-    TEE_GetSystemTime(&time_seed);
+    // 안전한 더미 키 생성 (스택 사용 최소화)
+    TEE_MemFill(pk, 0xAA, KYBER_PUBLICKEYBYTES);
+    TEE_MemFill(sk, 0xBB, KYBER_SECRETKEYBYTES);
     
-    for (int i = 0; i < KYBER_PUBLICKEYBYTES; i++) {
-        pk[i] = (uint8_t)((time_seed + i) % 256);
-    }
-    for (int i = 0; i < KYBER_SECRETKEYBYTES; i++) {
-        sk[i] = (uint8_t)((time_seed + i + 100) % 256);
-    }
-
-    TEE_GetSystemTime(&end_time);
-
-    elapsed_ms = (end_time > start_time) ? (end_time - start_time) : 1;
-    
-    DMSG("PERFORMANCE: Kyber keygen took %u ms", elapsed_ms);
+    DMSG("PERFORMANCE: Kyber keygen completed");
     DMSG("Key sizes: PK=%d bytes, SK=%d bytes", 
          KYBER_PUBLICKEYBYTES, KYBER_SECRETKEYBYTES);
     
@@ -106,8 +92,9 @@ TEE_Result TA_InvokeCommandEntryPoint(void *sess_ctx,
     
     switch (cmd_id) {
     case TA_KYBER_TEST_CMD_KEYGEN:
-        DMSG("Kyber TA: Generating keypair");
-        return kyber_simple_keygen_with_timing(g_public_key, g_secret_key);
+    DMSG("Kyber TA: Generating keypair");
+    
+    return kyber_simple_keygen_with_timing(g_public_key, g_secret_key);
 
     case TA_KYBER_TEST_CMD_ENCAPS: {
         uint8_t ciphertext[KYBER_CIPHERTEXTBYTES];
@@ -201,27 +188,27 @@ TEE_Result TA_InvokeCommandEntryPoint(void *sess_ctx,
                                                TEE_PARAM_TYPE_NONE);
     
     if (param_types != exp_param_types) {
+        DMSG("Parameter type mismatch: expected 0x%x, got 0x%x", 
+             exp_param_types, param_types);
         return TEE_ERROR_BAD_PARAMETERS;
     }
     
     char *input = params[0].memref.buffer;
     uint32_t input_size = params[0].memref.size;
        
-    IMSG("Received data from Normal World:");
-    IMSG("Input string: %s", input);
-    IMSG("Input size: %u bytes", input_size);
+    DMSG("Received data from Normal World:");
+    DMSG("Input string: %s", input);
+    DMSG("Input size: %u bytes", input_size);
 
     if (params[1].memref.size >= input_size) {
         TEE_MemMove(params[1].memref.buffer, input, input_size);
-        IMSG("Data echoed back to Normal World");
+        DMSG("Data echoed back to Normal World");
+        return TEE_SUCCESS;
     } else {
-        IMSG("Output buffer too small");
+        DMSG("Output buffer too small");
         return TEE_ERROR_SHORT_BUFFER;
     }
-    
-    return TEE_SUCCESS;
 }
-
     default:
         DMSG("Kyber TA: Unknown command %d", cmd_id);
         return TEE_ERROR_NOT_SUPPORTED;
