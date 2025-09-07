@@ -1,0 +1,11 @@
+project (kyber_test_ta C)
+set(BINARY ${PROJECT_NAME})
+
+set(SRC
+    kyber_test_ta.c
+)
+
+add_executable(${BINARY} ${SRC})
+
+set_target_properties(${BINARY} PROPERTIES SUFFIX .ta)
+install(TARGETS ${BINARY} DESTINATION ${TA_DEV_KIT_DIR}/../ta)
