@@ -13,8 +13,7 @@
 #define TA_KYBER_TEST_CMD_KEYGEN    0
 #define TA_KYBER_TEST_CMD_ENCAPS    1
 #define TA_KYBER_TEST_CMD_DECAPS    2
-#define TA_KYBER_TEST_CMD_ENCRYPT_DATA  3
-#define TA_KYBER_TEST_CMD_TEST_DATA  4
+#define TA_KYBER_TEST_CMD_TEST_DATA 4
 
 /* Kyber parameters */
 #define KYBER_PUBLICKEYBYTES  800
@@ -46,23 +45,17 @@ int main(void)
     if (res != TEEC_SUCCESS)
         errx(1, "TEEC_Opensession failed with code 0x%x origin 0x%x",
              res, err_origin);
-
-    /* Test 0: Data Transfer Test (교수님 요청사항) */
+    
+    /* Test 0: Data Transfer Test */
     printf("0. Testing Data Transfer to Secure World...\n");
-    char input[] = "Hello from Normal World! This is test data for OP-TEE.";
+    char input[] = "Hello from Normal World!";
     char output[256];
     
-    printf("   Sending: %s\n", input);
-    
     memset(&op, 0, sizeof(op));
-    // change the parameter type to MEMREF
     op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_INPUT, TEEC_MEMREF_TEMP_OUTPUT,
                                      TEEC_NONE, TEEC_NONE);
-    // set TEE parameter to user input
     op.params[0].tmpref.buffer = input;
     op.params[0].tmpref.size = strlen(input) + 1;
-    
-    // set output buffer
     op.params[1].tmpref.buffer = output;
     op.params[1].tmpref.size = sizeof(output);
     
@@ -70,9 +63,9 @@ int main(void)
     if (res != TEEC_SUCCESS) {
         printf("   FAILED: Data transfer error 0x%x origin 0x%x\n", res, err_origin);
     } else {
-        printf("   SUCCESS: Data transferred to TA!\n");
-        printf("   Received back: %s\n", output);
-        printf("   Check Secure World tab for TA logs.\n");
+        printf("   SUCCESS: Data transferred!\n");
+        printf("   Sent: %s\n", input);
+        printf("   Received: %s\n", output);
     }
     
     /* Test 1: Key Generation */
@@ -81,8 +74,7 @@ int main(void)
     op.paramTypes = TEEC_PARAM_TYPES(TEEC_NONE, TEEC_NONE,
                                      TEEC_NONE, TEEC_NONE);
     
-    res = TEEC_InvokeCommand(&sess, TA_KYBER_TEST_CMD_KEYGEN,
-                            &op, &err_origin);
+    res = TEEC_InvokeCommand(&sess, TA_KYBER_TEST_CMD_KEYGEN, &op, &err_origin);
     if (res != TEEC_SUCCESS) {
         printf("   FAILED: Key generation error 0x%x origin 0x%x\n", res, err_origin);
     } else {
@@ -97,8 +89,7 @@ int main(void)
     op.params[0].tmpref.buffer = ciphertext;
     op.params[0].tmpref.size = KYBER_CIPHERTEXTBYTES;
     
-    res = TEEC_InvokeCommand(&sess, TA_KYBER_TEST_CMD_ENCAPS,
-                            &op, &err_origin);
+    res = TEEC_InvokeCommand(&sess, TA_KYBER_TEST_CMD_ENCAPS, &op, &err_origin);
     if (res != TEEC_SUCCESS) {
         printf("   FAILED: Encapsulation error 0x%x origin 0x%x\n", res, err_origin);
     } else {
